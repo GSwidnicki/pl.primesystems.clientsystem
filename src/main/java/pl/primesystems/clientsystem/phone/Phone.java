@@ -1,5 +1,6 @@
 package pl.primesystems.clientsystem.phone;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import pl.primesystems.clientsystem.customer.Customer;
 
 import javax.persistence.*;
@@ -59,6 +60,7 @@ public class Phone {
         this.phoneNumberDescription = phoneNumberDescription;
     }
 
+    @JsonBackReference
     public Customer getCustomer() {
         return customer;
     }

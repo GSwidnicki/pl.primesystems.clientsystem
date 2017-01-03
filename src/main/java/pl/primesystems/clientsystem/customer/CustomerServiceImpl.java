@@ -16,6 +16,7 @@ public class CustomerServiceImpl implements CustomerService {
         this.customerRepository = customerRepository;
     }
 
+    @Transactional
     public List<Customer> findAll() {
         return customerRepository.findAll();
     }

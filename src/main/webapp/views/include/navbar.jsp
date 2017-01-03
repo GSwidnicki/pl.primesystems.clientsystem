@@ -9,6 +9,8 @@
                     <li class="dropdown">
                         <a href="/customers" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><spring:message code="customers"/> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li><a href="/customers"><spring:message code="customersList"/></a></li>
+                            <li role="separator" class="divider"></li>
                             <li><a href="/customers/add"><spring:message code="addNewCustomer"/></a></li>
                         </ul>
                     </li>

@@ -1,5 +1,6 @@
 package pl.primesystems.clientsystem.contact;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import pl.primesystems.clientsystem.customer.Customer;
 import pl.primesystems.clientsystem.user.User;
 
@@ -111,6 +112,7 @@ public class Contact {
         this.taskToDo = taskToDo;
     }
 
+    @JsonBackReference
     public Customer getCustomer() {
         return customer;
     }

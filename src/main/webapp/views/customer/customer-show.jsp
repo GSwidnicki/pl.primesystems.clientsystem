@@ -3,6 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ include file="/views/include/head.jsp" %>
 <%@ include file="/views/include/header.jsp" %>
+<%@ include file="/views/include/navbar.jsp" %>
 
             <p>${customer.id}</p>
             <p>${customer.taxNumber}</p>
