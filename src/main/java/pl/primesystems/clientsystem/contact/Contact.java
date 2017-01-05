@@ -112,7 +112,6 @@ public class Contact {
         this.taskToDo = taskToDo;
     }
 
-    @JsonBackReference
     public Customer getCustomer() {
         return customer;
     }

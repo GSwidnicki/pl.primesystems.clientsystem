@@ -1,6 +1,5 @@
 package pl.primesystems.clientsystem.customer;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import pl.primesystems.clientsystem.contact.Contact;
 import pl.primesystems.clientsystem.phone.Phone;
 
@@ -97,7 +96,6 @@ public class Customer {
         this.officeNumber = officeNumber;
     }
 
-    @JsonManagedReference
     public List<Phone> getPhoneNumbers() {
         return phoneNumbers;
     }
@@ -122,7 +120,6 @@ public class Customer {
         this.website = website;
     }
 
-    @JsonManagedReference
     public List<Contact> getContacts() {
         return contacts;
     }

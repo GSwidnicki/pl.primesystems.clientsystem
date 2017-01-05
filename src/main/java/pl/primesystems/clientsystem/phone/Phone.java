@@ -28,12 +28,6 @@ public class Phone {
     public Phone() {
     }
 
-    public Phone(String phoneNumber, String phoneNumberDescription, Customer customer) {
-        this.phoneNumber = phoneNumber;
-        this.phoneNumberDescription = phoneNumberDescription;
-        this.customer = customer;
-    }
-
     /* GETTERS AND SETTERS */
 
     public Long getId() {
@@ -60,7 +54,6 @@ public class Phone {
         this.phoneNumberDescription = phoneNumberDescription;
     }
 
-    @JsonBackReference
     public Customer getCustomer() {
         return customer;
     }

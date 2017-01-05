@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class CustomerServiceImpl implements CustomerService {
 
     private CustomerRepository customerRepository;
@@ -16,12 +17,10 @@ public class CustomerServiceImpl implements CustomerService {
         this.customerRepository = customerRepository;
     }
 
-    @Transactional
     public List<Customer> findAll() {
         return customerRepository.findAll();
     }
 
-    @Transactional
     public Customer add(Customer customer) {
         return customerRepository.save(customer);
     }
@@ -34,7 +33,6 @@ public class CustomerServiceImpl implements CustomerService {
         return customerRepository.findCustomerByTaxNumber(taxNumber).isPresent();
     }
 
-    @Transactional
     public void deleteCustomer(Long id) {
         customerRepository.delete(id);
     }
