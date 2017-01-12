@@ -1,6 +1,7 @@
 package pl.primesystems.clientsystem.contact;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.annotation.JsonValueInstantiator;
 import pl.primesystems.clientsystem.customer.Customer;
 import pl.primesystems.clientsystem.user.User;
 
@@ -42,6 +43,11 @@ public class Contact {
     /* CONSTRUCTORS */
 
     public Contact() {
+    }
+
+    public Contact(Customer customer) {
+        this.customer = customer;
+        customer.getContacts().add(this);
     }
 
     public Contact(User user, Date contactDate, String description, User assignedUser, Date nextContactDate, String taskToDo, Customer customer) {

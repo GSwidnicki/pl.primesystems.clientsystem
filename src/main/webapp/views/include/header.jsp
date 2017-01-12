@@ -35,7 +35,10 @@
                     <div class="panel-body">
                         Stanowisko: Przedstawiciel handlowy<br />
                         Dziś jest: wtorek, 22.12.2015<br />
-                        <a href="?logout">Wyloguj</a>
+                        <form method="post" action="/logout">
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                            <button type="submit"><spring:message code="logout"/></button>
+                        </form>
                     </div>
                 </div>
             </div>

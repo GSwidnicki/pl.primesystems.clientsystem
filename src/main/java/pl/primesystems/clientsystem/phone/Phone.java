@@ -1,6 +1,8 @@
 package pl.primesystems.clientsystem.phone;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import pl.primesystems.clientsystem.customer.Customer;
 
 import javax.persistence.*;

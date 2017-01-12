@@ -1,5 +1,7 @@
 package pl.primesystems.clientsystem.customer;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import pl.primesystems.clientsystem.contact.Contact;
 import pl.primesystems.clientsystem.phone.Phone;
 

@@ -48,6 +48,7 @@
                 <input name="website" type="text" class="form-control" id="website" placeholder="<spring:message code="website"/>">
             </div>
         </div>
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         <div class="form-group">
             <div class="col-sm-offset-3 col-sm-6">
                 <button type="submit" class="btn btn-default"><spring:message code="save"/></button>

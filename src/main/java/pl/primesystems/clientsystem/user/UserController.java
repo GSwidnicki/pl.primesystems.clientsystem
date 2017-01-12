@@ -34,12 +34,6 @@ public class UserController {
         return "auth/login";
     }
 
-    @PostMapping(value = "/login")
-    public String setLoginUser() {
-        //TODO
-        return null;
-    }
-
     /* REGISTER MAPPING */
 
     @GetMapping(value = "/register")

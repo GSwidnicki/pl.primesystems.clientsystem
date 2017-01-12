@@ -15,13 +15,7 @@ public class PhoneServiceImpl implements PhoneService {
         this.phoneRepository = phoneRepository;
     }
 
-    @Override
-    public List<Phone> findAll() {
-        return phoneRepository.findAll();
-    }
-
-    @Override
-    public Phone add(Phone phone) {
-        return phoneRepository.save(phone);
+    public List<Phone> findAllByCustomerId(Long id) {
+        return phoneRepository.findAllByCustomerId(id);
     }
 }

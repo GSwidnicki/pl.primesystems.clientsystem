@@ -10,6 +10,7 @@
     <input name="email" placeholder="<spring:message code="email"/>" required>
     <input name="password" placeholder="<spring:message code="password"/>" required>
     <input name="passwordConfirm" placeholder="<spring:message code="confirmPassword"/>" required>
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     <button type="submit"><spring:message code="register"/></button>
 </form>
 <%@ include file="/views/include/footer.jsp" %>

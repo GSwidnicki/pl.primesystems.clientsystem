@@ -8,7 +8,7 @@ public class HomePageController {
 
     @GetMapping(value = "/")
     public String getHomePage() {
-        return "redirect:/login";
+        return "home-page";
     }
 
 }
