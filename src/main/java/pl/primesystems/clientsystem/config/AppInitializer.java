@@ -1,7 +1,7 @@
 package pl.primesystems.clientsystem.config;
 
-import org.springframework.orm.hibernate5.support.OpenSessionInViewFilter;
 import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import javax.servlet.Filter;
@@ -29,6 +29,8 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
         characterEncodingFilter.setEncoding("UTF-8");
         characterEncodingFilter.setForceEncoding(true);
 
-        return new Filter[]{characterEncodingFilter};
+        DelegatingFilterProxy delegatingFilterProxy = new DelegatingFilterProxy("springSecurityFilterChain");
+
+        return new Filter[]{characterEncodingFilter, delegatingFilterProxy};
     }
 }

@@ -1,0 +1,1 @@
+INSERT INTO clientsystem.PS_roles (description, role) VALUES ('Default User', 'ROLE_USER');

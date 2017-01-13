@@ -1,6 +1,8 @@
 package pl.primesystems.clientsystem.user;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -21,6 +23,9 @@ public class User {
 
     @Column(name = "password", nullable = false, columnDefinition = "CHAR(40)")
     private String password;
+
+    @ManyToMany(mappedBy = "users")
+    private Set<UserRole> roles = new HashSet<>();
 
     /* CONSTRUCTORS */
 
@@ -67,5 +72,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Set<UserRole> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<UserRole> roles) {
+        this.roles = roles;
     }
 }
