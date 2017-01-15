@@ -14,10 +14,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class UserController {
 
     private UserValidator userValidator;
+    private UserServiceImpl userService;
 
     @Autowired
-    public UserController(UserValidator userValidator) {
+    public UserController(UserValidator userValidator, UserServiceImpl userService) {
         this.userValidator = userValidator;
+        this.userService = userService;
     }
 
     /* VALIDATOR */
@@ -43,7 +45,11 @@ public class UserController {
 
     @PostMapping(value = "/register")
     public String setRegisterUser(@Validated User user, BindingResult bindingResult, Model model) {
-        //TODO
-        return null;
+        if (bindingResult.hasErrors()) {
+            model.addAttribute(bindingResult.getAllErrors());
+            return "auth/register";
+        }
+        userService.addUserWithDefaultRole(user);
+        return "redirect:/login";
     }
 }

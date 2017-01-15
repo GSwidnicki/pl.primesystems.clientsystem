@@ -6,7 +6,7 @@
 <a href="?lang=pl"><spring:message code="polish"/></a>
 <a href="?lang=en"><spring:message code="english"/></a>
 <form method="post" action="/login-process">
-    <input name="username" placeholder="<spring:message code="email"/>" required>
+    <input name="email" placeholder="<spring:message code="email"/>" required>
     <input name="password" placeholder="<spring:message code="password"/>" required>
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     <button type="submit"><spring:message code="login"/></button>

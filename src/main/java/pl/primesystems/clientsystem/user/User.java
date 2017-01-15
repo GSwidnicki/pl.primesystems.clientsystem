@@ -1,5 +1,7 @@
 package pl.primesystems.clientsystem.user;
 
+import pl.primesystems.clientsystem.user.role.UserRole;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -24,7 +26,7 @@ public class User {
     @Column(name = "password", nullable = false, columnDefinition = "CHAR(40)")
     private String password;
 
-    @ManyToMany(mappedBy = "users")
+    @ManyToMany(mappedBy = "users", fetch = FetchType.EAGER)
     private Set<UserRole> roles = new HashSet<>();
 
     /* CONSTRUCTORS */

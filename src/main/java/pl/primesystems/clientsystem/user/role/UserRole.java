@@ -1,4 +1,6 @@
-package pl.primesystems.clientsystem.user;
+package pl.primesystems.clientsystem.user.role;
+
+import pl.primesystems.clientsystem.user.User;
 
 import javax.persistence.*;
 import java.util.HashSet;
