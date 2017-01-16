@@ -9,15 +9,10 @@ import pl.primesystems.clientsystem.user.role.UserRoleRepository;
 import static pl.primesystems.clientsystem.config.Keys.DEFAULT_USER_ROLE;
 
 @Service
-@Transactional
 public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
     private UserRoleRepository roleRepository;
-
-    public UserServiceImpl() {
-        System.out.println("*********** I try create service UserServiceImpl");
-    }
 
     @Autowired
     public void setUserRepository(UserRepository userRepository) {
@@ -33,9 +28,5 @@ public class UserServiceImpl implements UserService {
         UserRole defaultRole = roleRepository.findByRole(DEFAULT_USER_ROLE);
         user.getRoles().add(defaultRole);
         userRepository.save(user);
-    }
-
-    public User findByEmail(String email) {
-        return userRepository.findByEmail(email);
     }
 }

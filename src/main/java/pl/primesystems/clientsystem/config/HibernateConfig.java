@@ -47,7 +47,6 @@ public class HibernateConfig {
         entityManagerFactoryBean.setJpaProperties(hibernateProperties());
         entityManagerFactoryBean.setJpaVendorAdapter(vendorAdapter);
         entityManagerFactoryBean.afterPropertiesSet();
-        System.out.println("UTWORZYŁEM ENTITY MENAGER FACTORY!!");
         return entityManagerFactoryBean.getObject();
     }
 
