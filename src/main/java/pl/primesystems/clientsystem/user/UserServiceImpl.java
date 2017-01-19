@@ -29,4 +29,8 @@ public class UserServiceImpl implements UserService {
         user.getRoles().add(defaultRole);
         userRepository.save(user);
     }
+
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
 }

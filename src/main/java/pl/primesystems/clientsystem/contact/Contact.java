@@ -45,11 +45,6 @@ public class Contact {
     public Contact() {
     }
 
-    public Contact(Customer customer) {
-        this.customer = customer;
-        customer.getContacts().add(this);
-    }
-
     public Contact(User user, Date contactDate, String description, User assignedUser, Date nextContactDate, String taskToDo, Customer customer) {
         this.user = user;
         this.contactDate = contactDate;

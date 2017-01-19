@@ -1,12 +1,10 @@
 package pl.primesystems.clientsystem.customer;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import pl.primesystems.clientsystem.contact.Contact;
-import pl.primesystems.clientsystem.phone.Phone;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "customers")
@@ -31,17 +29,17 @@ public class Customer {
     @Column(name = "office_number", columnDefinition = "VARCHAR(10)")
     private String officeNumber;
 
-    @OneToMany(mappedBy = "customer")
-    private List<Phone> phoneNumbers;
+    @ElementCollection
+    @CollectionTable(
+            name = "phones",
+            joinColumns = @JoinColumn(name = "customer_id", nullable = false))
+    private Set<Phone> phoneNumbers = new HashSet<>();
 
     @Column(name = "email", columnDefinition = "VARCHAR(80)")
     private String email;
 
     @Column(name = "website", columnDefinition = "VARCHAR(80)")
     private String website;
-
-    @OneToMany(mappedBy = "customer")
-    private List<Contact> contacts;
 
     /* CONSTRUCTORS */
 
@@ -98,11 +96,11 @@ public class Customer {
         this.officeNumber = officeNumber;
     }
 
-    public List<Phone> getPhoneNumbers() {
+    public Set<Phone> getPhoneNumbers() {
         return phoneNumbers;
     }
 
-    public void setPhoneNumbers(List<Phone> phoneNumbers) {
+    public void setPhoneNumbers(Set<Phone> phoneNumbers) {
         this.phoneNumbers = phoneNumbers;
     }
 
@@ -120,13 +118,5 @@ public class Customer {
 
     public void setWebsite(String website) {
         this.website = website;
-    }
-
-    public List<Contact> getContacts() {
-        return contacts;
-    }
-
-    public void setContacts(List<Contact> contacts) {
-        this.contacts = contacts;
     }
 }

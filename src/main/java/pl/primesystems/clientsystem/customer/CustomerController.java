@@ -1,19 +1,13 @@
 package pl.primesystems.clientsystem.customer;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
-import pl.primesystems.clientsystem.contact.ContactServiceImpl;
-import pl.primesystems.clientsystem.phone.Phone;
-import pl.primesystems.clientsystem.phone.PhoneServiceImpl;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Controller
 @RequestMapping(value = "/customers")
@@ -21,16 +15,7 @@ public class CustomerController {
 
     private CustomerServiceImpl customerService;
     private CustomerValidator customerValidator;
-    private PhoneServiceImpl phoneService;
-    private ContactServiceImpl contactService;
 
-    @Autowired
-    public CustomerController(CustomerServiceImpl customerService, CustomerValidator customerValidator, PhoneServiceImpl phoneService, ContactServiceImpl contactService) {
-        this.customerService = customerService;
-        this.customerValidator = customerValidator;
-        this.phoneService = phoneService;
-        this.contactService = contactService;
-    }
 
     /* VALIDATOR */
 
@@ -67,8 +52,6 @@ public class CustomerController {
     @GetMapping(value = "/{id}")
     public String showCustomerDetails(@PathVariable Long id, Model model) {
         Customer customer = customerService.findOne(id);
-        customer.setPhoneNumbers(phoneService.findAllByCustomerId(id));
-        customer.setContacts(contactService.findAllByCustomerId(id));
         model.addAttribute("customer", customer);
         return "customer/customer-show";
     }
