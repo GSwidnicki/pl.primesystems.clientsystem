@@ -1,10 +1,12 @@
-package pl.primesystems.clientsystem.user;
+package pl.primesystems.clientsystem.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import pl.primesystems.clientsystem.user.role.UserRole;
-import pl.primesystems.clientsystem.user.role.UserRoleRepository;
+import pl.primesystems.clientsystem.entity.User;
+import pl.primesystems.clientsystem.entity.UserRole;
+import pl.primesystems.clientsystem.repository.UserRoleRepository;
+import pl.primesystems.clientsystem.repository.UserRepository;
+import pl.primesystems.clientsystem.service.UserService;
 
 import static pl.primesystems.clientsystem.config.Keys.DEFAULT_USER_ROLE;
 

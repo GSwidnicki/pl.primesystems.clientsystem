@@ -1,8 +1,8 @@
-package pl.primesystems.clientsystem.contact;
+package pl.primesystems.clientsystem.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import pl.primesystems.clientsystem.entity.Contact;
 
 import java.util.List;
 

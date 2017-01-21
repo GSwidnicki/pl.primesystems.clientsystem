@@ -1,7 +1,8 @@
-package pl.primesystems.clientsystem.customer;
+package pl.primesystems.clientsystem.service;
+
+import pl.primesystems.clientsystem.entity.Customer;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface CustomerService {
 

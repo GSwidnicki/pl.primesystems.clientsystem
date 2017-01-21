@@ -1,4 +1,4 @@
-package pl.primesystems.clientsystem.user;
+package pl.primesystems.clientsystem.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -6,7 +6,8 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import pl.primesystems.clientsystem.user.role.UserRole;
+import pl.primesystems.clientsystem.entity.User;
+import pl.primesystems.clientsystem.entity.UserRole;
 
 import java.util.HashSet;
 import java.util.Set;

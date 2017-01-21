@@ -1,11 +1,15 @@
-package pl.primesystems.clientsystem.customer;
+package pl.primesystems.clientsystem.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import pl.primesystems.clientsystem.entity.Customer;
+import pl.primesystems.clientsystem.service.impl.CustomerServiceImpl;
+import pl.primesystems.clientsystem.validator.CustomerValidator;
 
 import java.util.List;
 
@@ -16,6 +20,11 @@ public class CustomerController {
     private CustomerServiceImpl customerService;
     private CustomerValidator customerValidator;
 
+    @Autowired
+    public CustomerController(CustomerServiceImpl customerService, CustomerValidator customerValidator) {
+        this.customerService = customerService;
+        this.customerValidator = customerValidator;
+    }
 
     /* VALIDATOR */
 
@@ -28,9 +37,7 @@ public class CustomerController {
 
     @GetMapping
     public String getCustomersList(Model model) {
-        System.out.println("wyszukuję customerow");
         List<Customer> customers = customerService.findAll();
-        System.out.println("dodaje customerow do widoku");
         model.addAttribute("customers", customers);
         return "customer/customer-list";
     }
@@ -53,13 +60,9 @@ public class CustomerController {
 
     @GetMapping(value = "/{id}")
     public String showCustomerDetails(@PathVariable Long id, Model model) {
-        System.out.println("wyszukuję customera po id");
         Customer customer = customerService.findOne(id);
-        System.out.println("dodaje customera do widoku");
         model.addAttribute("customer", customer);
-        System.out.println("dodaje phones do widoku");
         model.addAttribute("phones", customer.getPhoneNumbers());
-        System.out.println("zwracam widok...");
         return "customer/customer-show";
     }
 

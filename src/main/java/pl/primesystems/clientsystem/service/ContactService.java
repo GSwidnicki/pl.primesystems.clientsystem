@@ -1,4 +1,6 @@
-package pl.primesystems.clientsystem.contact;
+package pl.primesystems.clientsystem.service;
+
+import pl.primesystems.clientsystem.entity.Contact;
 
 import java.util.List;
 

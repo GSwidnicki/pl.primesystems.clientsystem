@@ -1,8 +1,11 @@
-package pl.primesystems.clientsystem.customer;
+package pl.primesystems.clientsystem.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import pl.primesystems.clientsystem.repository.CustomerRepository;
+import pl.primesystems.clientsystem.entity.Customer;
+import pl.primesystems.clientsystem.service.CustomerService;
 
 import java.util.List;
 

@@ -1,8 +1,9 @@
-package pl.primesystems.clientsystem.user;
+package pl.primesystems.clientsystem.validator;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
+import pl.primesystems.clientsystem.entity.User;
 
 @Component
 public class UserValidator implements Validator {

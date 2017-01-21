@@ -1,4 +1,6 @@
-package pl.primesystems.clientsystem.user;
+package pl.primesystems.clientsystem.service;
+
+import pl.primesystems.clientsystem.entity.User;
 
 public interface UserService {
 

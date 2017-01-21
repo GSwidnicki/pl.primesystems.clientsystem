@@ -1,9 +1,4 @@
-package pl.primesystems.clientsystem.contact;
-
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.JsonValueInstantiator;
-import pl.primesystems.clientsystem.customer.Customer;
-import pl.primesystems.clientsystem.user.User;
+package pl.primesystems.clientsystem.entity;
 
 import javax.persistence.*;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package pl.primesystems.clientsystem.customer;
+package pl.primesystems.clientsystem.entity;
 
 import javax.persistence.*;
 

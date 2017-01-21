@@ -1,4 +1,4 @@
-package pl.primesystems.clientsystem.config;
+package pl.primesystems.clientsystem.config.hibernate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

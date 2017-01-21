@@ -1,4 +1,4 @@
-package pl.primesystems.clientsystem.config;
+package pl.primesystems.clientsystem.config.security;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 import org.springframework.web.filter.CharacterEncodingFilter;

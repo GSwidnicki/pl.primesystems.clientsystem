@@ -1,16 +1,13 @@
-package pl.primesystems.clientsystem.customer;
+package pl.primesystems.clientsystem.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import pl.primesystems.clientsystem.entity.Customer;
 
 import java.util.Optional;
 
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
-
-    @Query("SELECT DISTINCT c FROM Customer c JOIN c.phoneNumbers WHERE c.id = :id")
-    Customer findOne(Long id);
-
     Optional<Customer> findCustomerByTaxNumber(Long taxNumber);
 }

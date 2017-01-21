@@ -1,4 +1,4 @@
-package pl.primesystems.clientsystem.config;
+package pl.primesystems.clientsystem.config.hibernate;
 
 import org.hibernate.boot.model.naming.Identifier;
 import org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl;

@@ -1,7 +1,10 @@
-package pl.primesystems.clientsystem.contact;
+package pl.primesystems.clientsystem.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.primesystems.clientsystem.entity.Contact;
+import pl.primesystems.clientsystem.repository.ContactRepository;
+import pl.primesystems.clientsystem.service.ContactService;
 
 import java.util.List;
 

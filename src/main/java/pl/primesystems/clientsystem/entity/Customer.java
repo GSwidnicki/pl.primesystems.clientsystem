@@ -1,6 +1,4 @@
-package pl.primesystems.clientsystem.customer;
-
-import pl.primesystems.clientsystem.contact.Contact;
+package pl.primesystems.clientsystem.entity;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -29,7 +27,7 @@ public class Customer {
     @Column(name = "office_number", columnDefinition = "VARCHAR(10)")
     private String officeNumber;
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
     private Set<Phone> phoneNumbers = new HashSet<>();
 
     @Column(name = "email", columnDefinition = "VARCHAR(80)")

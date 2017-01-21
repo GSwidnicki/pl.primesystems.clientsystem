@@ -1,9 +1,11 @@
-package pl.primesystems.clientsystem.customer;
+package pl.primesystems.clientsystem.validator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
+import pl.primesystems.clientsystem.entity.Customer;
+import pl.primesystems.clientsystem.service.impl.CustomerServiceImpl;
 
 import static org.springframework.util.ObjectUtils.isEmpty;
 import static pl.primesystems.clientsystem.config.Keys.*;
