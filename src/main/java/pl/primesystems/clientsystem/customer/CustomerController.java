@@ -28,7 +28,9 @@ public class CustomerController {
 
     @GetMapping
     public String getCustomersList(Model model) {
+        System.out.println("wyszukuję customerow");
         List<Customer> customers = customerService.findAll();
+        System.out.println("dodaje customerow do widoku");
         model.addAttribute("customers", customers);
         return "customer/customer-list";
     }
@@ -51,8 +53,13 @@ public class CustomerController {
 
     @GetMapping(value = "/{id}")
     public String showCustomerDetails(@PathVariable Long id, Model model) {
+        System.out.println("wyszukuję customera po id");
         Customer customer = customerService.findOne(id);
+        System.out.println("dodaje customera do widoku");
         model.addAttribute("customer", customer);
+        System.out.println("dodaje phones do widoku");
+        model.addAttribute("phones", customer.getPhoneNumbers());
+        System.out.println("zwracam widok...");
         return "customer/customer-show";
     }
 

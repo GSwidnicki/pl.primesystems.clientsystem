@@ -29,10 +29,7 @@ public class Customer {
     @Column(name = "office_number", columnDefinition = "VARCHAR(10)")
     private String officeNumber;
 
-    @ElementCollection
-    @CollectionTable(
-            name = "phones",
-            joinColumns = @JoinColumn(name = "customer_id", nullable = false))
+    @OneToMany(mappedBy = "customer")
     private Set<Phone> phoneNumbers = new HashSet<>();
 
     @Column(name = "email", columnDefinition = "VARCHAR(80)")
@@ -41,10 +38,9 @@ public class Customer {
     @Column(name = "website", columnDefinition = "VARCHAR(80)")
     private String website;
 
-    /* CONSTRUCTORS */
-
-    public Customer() {
-    }
+    @OneToMany
+    @JoinColumn(name = "customer_id")
+    private Set<Contact> contacts = new HashSet<>();
 
     /* GETTERS AND SETTERS */
 
@@ -118,5 +114,13 @@ public class Customer {
 
     public void setWebsite(String website) {
         this.website = website;
+    }
+
+    public Set<Contact> getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(Set<Contact> contacts) {
+        this.contacts = contacts;
     }
 }
