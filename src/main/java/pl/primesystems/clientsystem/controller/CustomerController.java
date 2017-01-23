@@ -8,7 +8,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import pl.primesystems.clientsystem.entity.Customer;
-import pl.primesystems.clientsystem.service.impl.CustomerServiceImpl;
+import pl.primesystems.clientsystem.service.CustomerService;
 import pl.primesystems.clientsystem.validator.CustomerValidator;
 
 import java.util.List;
@@ -17,11 +17,11 @@ import java.util.List;
 @RequestMapping(value = "/customers")
 public class CustomerController {
 
-    private CustomerServiceImpl customerService;
+    private CustomerService customerService;
     private CustomerValidator customerValidator;
 
     @Autowired
-    public CustomerController(CustomerServiceImpl customerService, CustomerValidator customerValidator) {
+    public CustomerController(CustomerService customerService, CustomerValidator customerValidator) {
         this.customerService = customerService;
         this.customerValidator = customerValidator;
     }
@@ -62,7 +62,6 @@ public class CustomerController {
     public String showCustomerDetails(@PathVariable Long id, Model model) {
         Customer customer = customerService.findOne(id);
         model.addAttribute("customer", customer);
-        model.addAttribute("phones", customer.getPhoneNumbers());
         return "customer/customer-show";
     }
 

@@ -11,19 +11,11 @@ public class Contact {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
-
     @Column(name = "contact_date", nullable = false, columnDefinition = "DATE")
     private Date contactDate;
 
     @Column(nullable = false, columnDefinition = "TEXT")
     private String description;
-
-    @OneToOne
-    @JoinColumn(name = "assigned_user_id", nullable = false)
-    private User assignedUser;
 
     @Column(name = "next_contact_date", nullable = false, columnDefinition = "DATE")
     private Date nextContactDate;
@@ -35,21 +27,6 @@ public class Contact {
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
-    /* CONSTRUCTORS */
-
-    public Contact() {
-    }
-
-    public Contact(User user, Date contactDate, String description, User assignedUser, Date nextContactDate, String taskToDo, Customer customer) {
-        this.user = user;
-        this.contactDate = contactDate;
-        this.description = description;
-        this.assignedUser = assignedUser;
-        this.nextContactDate = nextContactDate;
-        this.taskToDo = taskToDo;
-        this.customer = customer;
-    }
-
     /* GETTERS AND SETTERS */
 
     public Long getId() {
@@ -58,14 +35,6 @@ public class Contact {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public Date getContactDate() {
@@ -82,14 +51,6 @@ public class Contact {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public User getAssignedUser() {
-        return assignedUser;
-    }
-
-    public void setAssignedUser(User assignedUser) {
-        this.assignedUser = assignedUser;
     }
 
     public Date getNextContactDate() {

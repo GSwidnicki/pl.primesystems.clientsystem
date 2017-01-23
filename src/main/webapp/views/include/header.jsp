@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <div class="container">
     <div class="row">
         <div class="col-lg-2">
@@ -30,7 +31,7 @@
         <div class="col-lg-4">
                 <div class="panel panel-default panel-user">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Zalogowany jako: Grzegorz Świdnicki</h3>
+                        <h3 class="panel-title">Zalogowany jako: <sec:authentication property="principal.username"/></h3>
                     </div>
                     <div class="panel-body">
                         Stanowisko: Przedstawiciel handlowy<br />

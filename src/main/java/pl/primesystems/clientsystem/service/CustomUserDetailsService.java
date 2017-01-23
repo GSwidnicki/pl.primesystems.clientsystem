@@ -1,4 +1,4 @@
-package pl.primesystems.clientsystem.service.impl;
+package pl.primesystems.clientsystem.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -16,10 +16,10 @@ import static pl.primesystems.clientsystem.config.Keys.USER_DOES_NOT_EXIST;
 
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private UserServiceImpl userService;
+    private UserService userService;
 
     @Autowired
-    public void setUserService(UserServiceImpl userService) {
+    public void setUserService(UserService userService) {
         this.userService = userService;
     }
 

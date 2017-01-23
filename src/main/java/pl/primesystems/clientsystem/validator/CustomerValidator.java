@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 import pl.primesystems.clientsystem.entity.Customer;
-import pl.primesystems.clientsystem.service.impl.CustomerServiceImpl;
+import pl.primesystems.clientsystem.service.CustomerService;
 
 import static org.springframework.util.ObjectUtils.isEmpty;
 import static pl.primesystems.clientsystem.config.Keys.*;
@@ -14,7 +14,7 @@ import static pl.primesystems.clientsystem.config.Keys.*;
 public class CustomerValidator implements Validator {
 
     @Autowired
-    private CustomerServiceImpl customerService;
+    private CustomerService customerService;
 
     @Override
     public boolean supports(Class<?> clazz) {

@@ -27,7 +27,7 @@ public class Customer {
     @Column(name = "office_number", columnDefinition = "VARCHAR(10)")
     private String officeNumber;
 
-    @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private Set<Phone> phoneNumbers = new HashSet<>();
 
     @Column(name = "email", columnDefinition = "VARCHAR(80)")
@@ -36,7 +36,7 @@ public class Customer {
     @Column(name = "website", columnDefinition = "VARCHAR(80)")
     private String website;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "customer_id")
     private Set<Contact> contacts = new HashSet<>();
 

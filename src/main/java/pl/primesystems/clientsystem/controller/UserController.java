@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import pl.primesystems.clientsystem.entity.User;
-import pl.primesystems.clientsystem.service.impl.UserServiceImpl;
+import pl.primesystems.clientsystem.service.UserService;
 import pl.primesystems.clientsystem.validator.UserValidator;
 
 @Controller
 public class UserController {
 
     private UserValidator userValidator;
-    private UserServiceImpl userService;
+    private UserService userService;
 
     @Autowired
-    public UserController(UserValidator userValidator, UserServiceImpl userService) {
+    public UserController(UserValidator userValidator, UserService userService) {
         this.userValidator = userValidator;
         this.userService = userService;
     }

@@ -3,4 +3,5 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ include file="/views/include/head.jsp" %>
 <h1>Home Page</h1>
+<h3><a href="/customers">Show dashboard</a></h3>
 <%@ include file="/views/include/footer.jsp" %>
