@@ -12,8 +12,8 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "tax_number", nullable = false, columnDefinition = "BIGINT(10)")
-    private Long taxNumber;
+    @Column(name = "tax_number", nullable = false, columnDefinition = "CHAR(10)")
+    private String taxNumber;
 
     @Column(name = "company_name", nullable = false, columnDefinition = "VARCHAR(300)")
     private String companyName;
@@ -27,7 +27,7 @@ public class Customer {
     @Column(name = "office_number", columnDefinition = "VARCHAR(10)")
     private String officeNumber;
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "customer", cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
     private Set<Phone> phoneNumbers = new HashSet<>();
 
     @Column(name = "email", columnDefinition = "VARCHAR(80)")
@@ -36,7 +36,7 @@ public class Customer {
     @Column(name = "website", columnDefinition = "VARCHAR(80)")
     private String website;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
     @JoinColumn(name = "customer_id")
     private Set<Contact> contacts = new HashSet<>();
 
@@ -50,11 +50,11 @@ public class Customer {
         this.id = id;
     }
 
-    public Long getTaxNumber() {
+    public String getTaxNumber() {
         return taxNumber;
     }
 
-    public void setTaxNumber(Long taxNumber) {
+    public void setTaxNumber(String taxNumber) {
         this.taxNumber = taxNumber;
     }
 

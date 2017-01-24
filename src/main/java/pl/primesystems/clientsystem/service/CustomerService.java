@@ -16,7 +16,7 @@ public class CustomerService {
 
     @Autowired
     public CustomerService(CustomerRepository customerRepository) {
-        this.customerRepository = customerRepository;
+        this.customerRepository = customerRepository;;
     }
 
     public List<Customer> findAll() {
@@ -31,7 +31,7 @@ public class CustomerService {
         return customerRepository.findOne(id);
     }
 
-    public boolean customerExistsByTaxNumber(Long taxNumber) {
+    public boolean customerExistsByTaxNumber(String taxNumber) {
         return customerRepository.findCustomerByTaxNumber(taxNumber).isPresent();
     }
 

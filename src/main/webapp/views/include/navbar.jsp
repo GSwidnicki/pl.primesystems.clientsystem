@@ -19,6 +19,9 @@
                     <li><a href="/products"><spring:message code="products"/></a></li>
                     <li><a href="/sale"><spring:message code="sale"/></a></li>
                     <li><a href="/reports"><spring:message code="reports"/></a></li>
+                    <sec:authorize access="hasRole('ROLE_ADMIN')">
+                        <li><a href="/users"><spring:message code="users"/></a></li>
+                    </sec:authorize>
                 </ul>
             </div>
         </div>

@@ -10,5 +10,5 @@ import java.util.Optional;
 
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
-    Optional<Customer> findCustomerByTaxNumber(Long taxNumber);
+    Optional<Customer> findCustomerByTaxNumber(String taxNumber);
 }

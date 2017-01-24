@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ include file="/views/include/head.jsp" %>
 <%@ include file="/views/include/header.jsp" %>
 <%@ include file="/views/include/navbar.jsp" %>
@@ -30,19 +31,23 @@
                     <td>${customer.officeNumber}</td>
                     <td>${customer.email}</td>
                     <td>${customer.website}</td>
-                    <td>
-                        <div class="btn-group">
-                            <a class="btn btn-default" href="/customers/${customer.id}"><spring:message code="show"/></a>
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="caret"></span>
-                                <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="/customers/${customer.id}/edit"><spring:message code="edit"/></a></li>
-                                <li><a href="/customers/${customer.id}/delete"><spring:message code="delete"/></a></li>
-                            </ul>
-                        </div>
-                    </td>
+
+                        <td>
+                            <div class="btn-group">
+                                <a class="btn btn-default" href="/customers/${customer.id}"><spring:message code="show"/></a>
+                                <sec:authorize access="hasRole('ROLE_ADMIN')">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/customers/${customer.id}/edit"><spring:message code="edit"/></a></li>
+                                    <li><a href="/customers/${customer.id}/delete"><spring:message code="delete"/></a></li>
+                                </ul>
+                                </sec:authorize>
+                            </div>
+                        </td>
+
                 </tr>
             </c:forEach>
         </tbody>

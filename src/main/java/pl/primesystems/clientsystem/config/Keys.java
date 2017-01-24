@@ -14,5 +14,6 @@ public class Keys {
     public static final String USER_DOES_NOT_EXIST = "userDoesNotExist";
 
     public static final String CHECK_TAX_NUMBER_LENGTH = "checkTaxNumberLength";
+    public static final String TAX_NUMBER_IS_INVALID = "invalidTaxNumber";
 
 }
